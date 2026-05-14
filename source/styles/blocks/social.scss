@@ -1,0 +1,87 @@
+.social {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    padding: 40px 20px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    display: block;
+  }
+}
+
+.social__logo {
+  display: block;
+  width: 82px;
+  height: 36px;
+  margin-right: 10px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 170px;
+    height: 36px;
+    margin-right: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.social__description {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    margin: 0;
+    margin-bottom: 50px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.social__list {
+  @include list-reset;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 160px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 360px;
+  }
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: $grey;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  &:active {
+    background-color: rgba(120, 89, 207, 0.25);
+    color: $primary;
+  }
+}

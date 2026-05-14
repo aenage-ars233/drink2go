@@ -1,0 +1,32 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border: none;
+  background-color: $primary;
+  color: $white;
+  font: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: #9070ec;
+  }
+
+  &:active {
+    background-color: #593cac;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: $grey;
+    cursor: default;
+  }
+}

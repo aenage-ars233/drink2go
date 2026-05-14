@@ -1,0 +1,264 @@
+.slider {
+  position: relative;
+}
+
+.slider__list {
+  @include list-reset;
+}
+
+.slider__item {
+  display: none;
+
+  img {
+    width: 280px;
+    height: 280px;
+
+    @media (min-width: $tablet-width) {
+      width: 476px;
+      height: 476px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 600px;
+      height: 600px;
+    }
+  }
+
+  &--active {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+      width: 1231px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+  }
+}
+
+.slider__content {
+  width: 280px;
+  margin: 0 auto;
+  order: 1;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    width: 608px;
+    order: 0;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    order: 1;
+    width: 625px;
+    margin-top: 150px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+.slider__badge {
+  display: block;
+  margin-bottom: 4px;
+  color: $primary;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  @media (min-width: $desktop-width) {
+    letter-spacing: 0.5px;
+  }
+}
+
+.slider__title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0.7px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: 1px;
+  }
+
+  @media (min-width: $desktop-width) {
+    letter-spacing: 1.1px;
+  }
+}
+
+.slider__description {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 606px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 580px;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+  br {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
+  }
+}
+
+.slider__buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $desktop-width) {
+    justify-content: flex-start;
+  }
+}
+
+.slider__old-price {
+  margin-right: 5px;
+  color: $primary;
+  line-height: 32px;
+}
+
+.slider__price {
+  margin-right: 22px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.slider__image {
+  display: block;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  order: 0;
+
+  @media (min-width: $tablet-width) {
+    width: 476px;
+    height: 476px;
+    margin-bottom: -188px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 600px;
+    height: 600px;
+    margin-bottom: 0;
+    margin-right: 56px;
+  }
+}
+
+.slider__control {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 616px;
+  border: none;
+  background-color: transparent;
+  color: $primary;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    width: 80px;
+    height: 520px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 653px;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    color: $grey;
+    background: transparent;
+    cursor: default;
+  }
+
+  &--prev {
+    left: -1px;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-image: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:active {
+      background-image: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &--next {
+    right: -1px;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-image: linear-gradient(-90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:active {
+      background-image: linear-gradient(-90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+}
+
+.slider__pagination-list {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    @include list-reset;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+.slider__pagination-button {
+  display: block;
+  width: 62px;
+  height: 4px;
+  border: none;
+  background-color: $white;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  &:active {
+    background-color: $primary;
+  }
+
+  &--active,
+  &--active:hover {
+    background-color: $primary;
+    cursor: default;
+  }
+}

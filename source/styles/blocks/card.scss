@@ -1,0 +1,90 @@
+.card {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  padding: 40px 20px 20px;
+  background-color: $white;
+  border-radius: 4px;
+  height: 100%;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 30px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--special {
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.card__link {
+  display: block;
+  margin-bottom: 4px;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 9px;
+  }
+}
+
+.card__image {
+  display: block;
+  width: 130px;
+  height: 188px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 31px;
+  }
+}
+
+.card__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.card__description {
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.card__buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__price {
+  margin-left: -2px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.card__basket-button {
+  width: 141px;
+  padding: 6px 18px 6px 20px;
+  letter-spacing: -1px;
+}
