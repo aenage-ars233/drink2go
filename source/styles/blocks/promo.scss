@@ -1,7 +1,18 @@
 .promo {
   padding-top: 20px;
   padding-bottom: 60px;
-  background-color: #f3ebe1;
+
+  &:has(.slider__item:first-child.slider__item--active) {
+    background-color: #f3ebe1;
+  }
+
+  &:has(.slider__item:nth-child(2).slider__item--active) {
+    background-color: #eae6fc;
+  }
+
+  &:has(.slider__item:nth-child(3).slider__item--active) {
+    background-color: #e5e6e8;
+  }
 
   @media (min-width: $tablet-width) {
     padding-top: 60px;
